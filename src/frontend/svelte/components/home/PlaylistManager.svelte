@@ -281,7 +281,7 @@
 		padding: 0 20px 20px 20px;
 		margin-bottom: 20px;
 		min-height: 240px;
-		overflow: hidden;
+		overflow: visible;
 		transition: max-height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	}
 </style>
