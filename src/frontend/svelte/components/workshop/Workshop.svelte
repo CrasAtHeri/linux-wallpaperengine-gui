@@ -21,7 +21,9 @@
 	} from './Workshop.svelte.ts';
 
 	let workshopFilters: FilterConfig = { ...DEFAULT_WORKSHOP_FILTER_CONFIG };
-	let filterCategories: FilterCategory[] = buildFilterCategories();
+	let filterCategories: FilterCategory[] = buildFilterCategories().filter(
+		(cat) => cat.internalKey !== 'sourcetags'
+	);
 	let initialLoadDone = false;
 	let showFilterPanel = false;
 	let searching = false;
@@ -53,9 +55,21 @@
 		steamRunning = await checkSteamStatus();
 	}
 
+	async function handleRetryConnection() {
+		await updateSteamStatus();
+		if (steamRunning) {
+			handleSearch();
+		}
+	}
+
 	function handleLaunchSteam() {
 		launchSteam();
-		setTimeout(updateSteamStatus, 5000);
+		setTimeout(async () => {
+			await updateSteamStatus();
+			if (steamRunning) {
+				handleSearch();
+			}
+		}, 5000);
 	}
 
 	async function handleLoadFilters() {
@@ -199,7 +213,7 @@
 			<SteamFallback
 				{searchError}
 				onLaunchSteam={handleLaunchSteam}
-				onRetry={updateSteamStatus}
+				onRetry={handleRetryConnection}
 			/>
 		{:else}
 			{#if showFilterPanel && workshopFilters}
