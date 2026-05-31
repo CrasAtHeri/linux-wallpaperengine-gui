@@ -78,7 +78,12 @@
 			"customCommandArgsDesc": "向后端传递原始参数。",
 			"customArgsPlaceholder": "例如 --window 0x0x1920x1080",
 			"commonOptionsDoc": "通用选项文档",
-			"restartConfirm": "更改 Wayland 支持需要重启。是否立即重启？"
+			"restartConfirm": "更改 Wayland 支持需要重启。是否立即重启？",
+			"hooks": "Hook",
+			"hooksDesc": "启用 Hook。",
+			"onWallpaperChange": "壁纸切换时",
+			"onWallpaperChangeDesc": "Shell 命令。变量：$PREVIEW_PATH, $VIDEO_PATH, $IS_VIDEO, $WALLPAPER_TITLE, $WALLPAPER_TYPE, $WALLPAPER_ID, $SCREEN_NAME。",
+			"onWallpaperChangePlaceholder": "例如 matugen image \"$PREVIEW_PATH\" -j"
 		},
 		"executable": {
 			"binaryLocation": "二进制文件位置",

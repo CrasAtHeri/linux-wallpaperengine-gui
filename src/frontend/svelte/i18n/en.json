@@ -78,7 +78,12 @@
 			"customCommandArgsDesc": "Pass raw arguments to the backend.",
 			"customArgsPlaceholder": "e.g. --window 0x0x1920x1080",
 			"commonOptionsDoc": "Common Options Documentation",
-			"restartConfirm": "Changing Wayland support requires a restart. Do you want to restart now?"
+			"restartConfirm": "Changing Wayland support requires a restart. Do you want to restart now?",
+			"hooks": "Hooks",
+			"hooksDesc": "Enable hooks.",
+			"onWallpaperChange": "On wallpaper change",
+			"onWallpaperChangeDesc": "Shell command. Variables: $PREVIEW_PATH, $VIDEO_PATH, $IS_VIDEO, $WALLPAPER_TITLE, $WALLPAPER_TYPE, $WALLPAPER_ID, $SCREEN_NAME.",
+			"onWallpaperChangePlaceholder": "e.g. matugen image \"$PREVIEW_PATH\" -j"
 		},
 		"executable": {
 			"binaryLocation": "Binary Location",

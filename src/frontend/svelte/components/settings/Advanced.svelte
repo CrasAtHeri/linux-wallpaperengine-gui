@@ -70,9 +70,9 @@
 
 	<!-- Hooks: add more hook items below as needed -->
 	<SettingItem
-		label="Hooks"
+		label={$t('settings.advanced.hooks')}
 		id="hookEnabled"
-		description="Enable hooks."
+		description={$t('settings.advanced.hooksDesc')}
 	>
 		<Toggle
 			id="hookEnabled"
@@ -82,15 +82,15 @@
 
 	{#if $settingsStore.hookEnabled}
 		<SettingItem
-			label="On wallpaper change"
+			label={$t('settings.advanced.onWallpaperChange')}
 			id="wallpaperChangeCommand"
 			vertical
-			description="Shell command. Variables: $PREVIEW_PATH, $VIDEO_PATH, $IS_VIDEO, $WALLPAPER_TITLE, $WALLPAPER_TYPE, $WALLPAPER_ID, $SCREEN_NAME."
+			description={$t('settings.advanced.onWallpaperChangeDesc')}
 		>
 			<Input
 				id="wallpaperChangeCommand"
 				bind:value={$settingsStore.wallpaperChangeCommand}
-				placeholder='e.g. matugen image "$PREVIEW_PATH" -j'
+				placeholder={$t('settings.advanced.onWallpaperChangePlaceholder')}
 			/>
 		</SettingItem>
 	{/if}
